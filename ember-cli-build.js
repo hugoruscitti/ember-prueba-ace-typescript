@@ -6,6 +6,9 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  app.import('bower_components/ace-builds/src-noconflict/ace.js');
+  app.import('bower_components/ace-builds/src-noconflict/mode-typescript.js');
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //

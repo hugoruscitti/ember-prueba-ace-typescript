@@ -6,8 +6,8 @@ export default Ember.Controller.extend({
     aceInit(editor) {
       editor.setHighlightActiveLine(false);
       editor.setShowPrintMargin(false);
-      editor.getSession().setTabSize(2);
-      //editor.getSession().setMode("ace/mode/javascript");
+      editor.getSession().setTabSize(4);
+      editor.getSession().setMode("ace/mode/typescript");
     }
   }
 });

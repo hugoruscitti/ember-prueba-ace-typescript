@@ -1,14 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  value: "",
 
   didInsertElement: function() {
-    this.editor = window.ace.edit('editor');
+    this.editor = window.ace.edit(this.$('#editor')[0]);
 
-    //this.get('aceInit')(this.editor);
+    this.editor.getSession().setValue(this.get('value'));
+    this.sendAction('aceInit', this.editor);
 
     this.editor.on('change', function(){
-      //this.set('value', this.editor.getSession().getValue());
+      this.set('value', this.editor.getSession().getValue());
     }.bind(this));
   },
 
